@@ -27,9 +27,7 @@ function copyArrayAndManipulate(array, instructions) {
   return output;
 }
 
-function multiplyBy2(input) {
-  return input * 2;
-}
+const multiplyBy2 = (input) => input * 2;
 
 const myArray = [1, 2, 3];
 
