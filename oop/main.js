@@ -33,18 +33,16 @@ console.log(yetAnotherUser);
 
 // creating objects with function
 function userCreator(name, score) {
-  const newUser = {};
-  newUser.name = name;
-  newUser.score = score;
-  newUser.increment = function () {
-    newUser.score++;
-  };
-
-  return newUser;
+  this.name = name;
+  this.score = score;
 }
 
-const user1 = userCreator("Ari", 3);
-const user2 = userCreator("Jae", 5);
+userCreator.prototype.increment = function () {
+  this.score++;
+};
+
+const user1 = new userCreator("Ari", 3);
+const user2 = new userCreator("Jae", 5);
 
 user1.increment();
 console.log(user1);
